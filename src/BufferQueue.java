@@ -1,5 +1,10 @@
 import java.util.LinkedList;
 
+/*
+@author Keiffer Button
+Class: CS1131 Accelerated Intro to Programming
+Lab: L01
+ */
 public class BufferQueue implements QueueInterface{
 
     //public int last;

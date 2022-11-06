@@ -1,6 +1,11 @@
 import java.io.*;
 import java.util.Scanner;
 
+/*
+@author Keiffer Button
+Class: CS1131 Accelerated Intro to Programming
+Lab: L01
+ */
 public class Week10Program {
     private static QueueEmptyException InvalidQueueException;
 
