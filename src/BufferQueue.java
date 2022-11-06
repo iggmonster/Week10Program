@@ -1,3 +1,4 @@
+import java.util.Iterator;
 import java.util.LinkedList;
 
 /*
@@ -5,7 +6,7 @@ import java.util.LinkedList;
 Class: CS1131 Accelerated Intro to Programming
 Lab: L01
  */
-public class BufferQueue implements QueueInterface{
+public class BufferQueue<T> implements QueueInterface<T>, Iterable<T>{
 
     //public int last;
 
@@ -13,21 +14,32 @@ public class BufferQueue implements QueueInterface{
     private static LinkedList<Character> queuell;
     public int limit;
 
-//constructor
+    public BufferQueue(T i) {
+
+    }
+
+    public BufferQueue() {
+
+    }
+
+    //constructor
     public void bufferSize(int sizeLimit ){
 
         //queue = new Character[sizeLimit];
         limit = sizeLimit;
+        queuell = new LinkedList<>();
     }
-
+/*
     public BufferQueue(){
         queuell = new LinkedList<>();
         //last = 0;
     }
 
 
+ */
+
     @Override
-    public void enqueue(Object element) throws QueueFullException {
+    public void enqueue(T element) throws QueueFullException {
         //queue[last] = (Character) element;
         //last++;
         //System.out.println("Before: " + queuell.toString());
@@ -35,13 +47,13 @@ public class BufferQueue implements QueueInterface{
     }
 
     @Override
-    public Object dequeue() throws QueueEmptyException {
-        return queuell.poll();
+    public T dequeue() throws QueueEmptyException {
+        return (T) queuell.poll();
     }
 
     @Override
-    public Object peek() throws QueueEmptyException {
-        return queuell.peek();
+    public T peek() throws QueueEmptyException {
+        return (T) queuell.peek();
     }
 
     @Override
@@ -79,5 +91,10 @@ public class BufferQueue implements QueueInterface{
 
     public void clearQueue(){
         queuell.clear();
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return null;
     }
 }

@@ -15,7 +15,7 @@ public class Week10Program {
         BufferQueue bufferQueue = new BufferQueue();
 
         Scanner in = new Scanner(System.in);
-        System.out.println("Input file name (ex: example.txt): ");
+        //System.out.println("Input file name (ex: example.txt): ");
         File file = new File(in.nextLine());
         //System.out.println(file);
 
@@ -27,6 +27,7 @@ public class Week10Program {
         //while ((ch = (char) br.read()) != '\0' ){
         //    System.out.println(ch);
         //}
+
 
 
         int int1 = 0;
@@ -50,11 +51,15 @@ public class Week10Program {
                         String s = s1 + s2;
                         size = Integer.parseInt(s);
                         //System.out.println("Size: " + size);
-                        bufferQueue.bufferSize(size);
+                        //System.out.println(size);
 
                         if (size == 0){
-                            throw InvalidQueueException;
+                            System.out.println(size);
+                            throw new InvalidQueueException();
                         }
+
+                        bufferQueue.bufferSize(size);
+
                     }
                     i++;
                 } else {
@@ -74,3 +79,5 @@ public class Week10Program {
         }
     }
 }
+
+
